@@ -1,0 +1,185 @@
+﻿
+@{
+    ViewBag.Title = "DashBoard";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+    <div class="page-header page-header-default">
+        <div class="page-header-content">
+            <div class="page-title">
+                <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Golden </span>Numbers</h4>
+            </div>
+
+
+        </div>
+
+        <div class="breadcrumb-line">
+            <ul class="breadcrumb">
+                <li><a href="@Url.Action("Dashboard","Admin")"><i class=" Active icon-home2 position-left"></i> Home</a></li>
+                <li> </li>
+            </ul>
+
+            <ul class="breadcrumb-elements"></ul>
+        </div>
+      
+
+    </div>
+
+    <div class="content">
+        <div>
+            <h1> <b>Monthly Stats</b></h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+
+                <!-- Members online -->
+                <div class="panel bg-teal-400">
+                    <div class="panel-body">
+
+
+                        <h3 class="no-margin">@ViewBag.MNumbersList</h3>
+                        New Added Numbers
+
+                    </div>
+
+                    <div class="container-fluid">
+                        <div id="members-online"></div>
+                    </div>
+                </div>
+                <!-- /members online -->
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <!-- Current server load -->
+                <div class="panel bg-pink-400">
+                    <div class="panel-body">
+                        
+
+                        <h3 class="no-margin">@ViewBag.MDNumbersList</h3>
+                        New Buyers
+                        
+                    </div>
+
+                    <div id="server-load"></div>
+                </div>
+                <!-- /current server load -->
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <!-- Today's revenue -->
+                <div class="panel bg-blue-400">
+                    <div class="panel-body">
+                        
+
+                        <h3 class="no-margin">@ViewBag.MSNumbersList</h3>
+                        New Sellers
+                       
+                    </div>
+
+                    <div id="today-revenue"></div>
+                </div>
+                <!-- /today's revenue -->
+
+            </div>
+            <div class="col-lg-3">
+
+                <!-- Today's revenue -->
+                <div class="panel bg-primary-600">
+                    <div class="panel-body">
+                       
+
+                        <h3 class="no-margin">@ViewBag.SubscribersList</h3>
+                        New Subscribers
+                        
+                    </div>
+
+                    <div id="today-revenue"></div>
+                </div>
+                <!-- /today's revenue -->
+
+            </div>
+        </div>
+
+        <div>
+            <h1> <b>Total Stats</b></h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+
+                <!-- Members online -->
+                <div class="panel bg-teal-400">
+                    <div class="panel-body">
+
+
+                        <h3 class="no-margin">@ViewBag.TNumbersList</h3>
+                        Total Added Numbers
+
+                    </div>
+
+                    <div class="container-fluid">
+                        <div id="members-online"></div>
+                    </div>
+                </div>
+                <!-- /members online -->
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <!-- Current server load -->
+                <div class="panel bg-pink-400">
+                    <div class="panel-body">
+
+
+                        <h3 class="no-margin">@ViewBag.TDNumbersList</h3>
+                        Total Buyers
+
+                    </div>
+
+                    <div id="server-load"></div>
+                </div>
+                <!-- /current server load -->
+
+            </div>
+
+            <div class="col-lg-3">
+
+                <!-- Today's revenue -->
+                <div class="panel bg-blue-400">
+                    <div class="panel-body">
+
+
+                        <h3 class="no-margin">@ViewBag.TSNumbersList</h3>
+                        Total Sellers
+
+                    </div>
+
+                    <div id="today-revenue"></div>
+                </div>
+                <!-- /today's revenue -->
+
+            </div>
+            <div class="col-lg-3">
+
+                <!-- Today's revenue -->
+                <div class="panel bg-primary-600">
+                    <div class="panel-body">
+
+
+                        <h3 class="no-margin">@ViewBag.TSubscribersList</h3>
+                        Total Subscribers
+
+                    </div>
+
+                    <div id="today-revenue"></div>
+                </div>
+                <!-- /today's revenue -->
+
+            </div>
+        </div>
+    </div>

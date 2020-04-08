@@ -1,0 +1,121 @@
+﻿
+@{
+    /**/
+
+    ViewBag.Title = "ListNumbers";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using GoldenNumbers.Models
+
+
+<div class="page-header page-header-default">
+    <div class="page-header-content">
+        <div class="page-title">
+            <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Golden Numbers</span> Exchange</h4>
+        </div>
+
+
+    </div>
+
+    <div class="breadcrumb-line">
+        <ul class="breadcrumb">
+            <li><a href="@Url.Action("Index","Admin")"><i class="icon-home2 position-left"></i> Home</a></li>
+            <li><a href="">Numbers</a></li>
+            <li class="active">List Number</li>
+        </ul>
+
+
+    </div>
+</div>
+
+<!-- Content area -->
+<div class="content">
+    <!-- /page header -->
+    <!-- Content area -->
+    <!-- Basic datatable -->
+    <div class="panel panel-flat table-responsive">
+
+        <div class="panel-heading">
+            <h1 class="panel-title">Number's List</h1>
+
+        </div>
+
+
+        <table class="table datatable-basic">
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Price</th>
+                    <th>Company</th>
+                    <th>Type</th>
+                    <th>Status</th>
+
+                
+                    <th style="margin-left:50px;padding-left:55px" class="text-left">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Number num in ViewBag.Numbers)
+                {
+                    <tr>
+                        <td>@num.Number1</td>
+                        <td>@num.Price</td>
+                        <td>@num.Company</td>
+                        <td>@num.Type</td>
+                        <td>@num.Status</td>
+
+                        <td style="width:175px" class="text-left">
+                            <a  href="@Url.Action("EditNumber", "Admin", new { id = num.Id })" class="btn btn-primary responsive-menu btn-sm"> Edit</a>
+                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal_theme_danger" onclick="DeleteDesiredNumber('@num.Id')">Delete </button>
+
+                        </td>
+                       
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <div class="footer text-muted">
+        &copy; 2019.Powered by <a href="http://nodlays.com" target="_blank">Nodlays</a>
+    </div>
+    <!-- /content area -->
+</div>
+
+<div id="modal_theme_danger" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-danger">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h6 class="modal-title">Warning</h6>
+            </div>
+
+            <div class="modal-body">
+                <h6 class="text-semibold">Are you Sure to Delete this Number's Record?</h6>
+
+                <hr>
+
+            </div>
+            <form action="@Url.Action("DeleteNumber","Admin")" method="post">
+                <input type="hidden" id="NumId" name="numId" />
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link btn-sm" data-dismiss="modal">No</button>
+                    <button type="submit" class="btn btn-danger btn-sm">Yes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    function DeleteDesiredNumber(id) {
+        document.getElementById("NumId").defaultValue = id;
+    }
+
+</script>

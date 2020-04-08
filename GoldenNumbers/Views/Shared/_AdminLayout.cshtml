@@ -1,0 +1,165 @@
+﻿@using GoldenNumbers.Helping_Classes
+@{
+    Layout = null;
+    SessionDTO sessiondto = new SessionDTO();
+    string name = sessiondto.getName();
+    int Id = sessiondto.getId();
+}
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Golden Numbers Exchange</title>
+
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <link href="~/Content/assetss/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/assetss/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/assetss/css/core.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/assetss/css/components.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/assetss/css/colors.css" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+    <!-- Core JS files -->
+    <script type="text/javascript" src="~/Content/assetss/js/plugins/loaders/pace.min.js"></script>
+    <script type="text/javascript" src="~/Content/assetss/js/core/libraries/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Content/assetss/js/core/libraries/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Content/assetss/js/plugins/loaders/blockui.min.js"></script>
+    <!-- /core JS files -->
+    <!-- Theme JS files -->
+    <script type="text/javascript" src="~/Content/assetss/js/plugins/visualization/d3/d3.min.js"></script>
+    <script type="text/javascript" src="~/Content/assetss/js/plugins/visualization/d3/d3_tooltip.js"></script>
+    <script type="text/javascript" src="~/Content/assetss/js/plugins/forms/styling/switchery.min.js"></script>
+    <script type="text/javascript" src="~/Content/assetss/js/plugins/forms/styling/uniform.min.js"></script>
+    <script type="text/javascript" src="~/Content/assetss/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+    <script type="text/javascript" src="~/Content/assetss/js/plugins/ui/moment/moment.min.js"></script>
+    <script type="text/javascript" src="~/Content/assetss/js/plugins/pickers/daterangepicker.js"></script>
+
+    <!-- Basic Datatables -->
+    <script type="text/javascript" src="~/Content/assetss/js/plugins/tables/datatables/datatables.min.js"></script>
+
+    <script type="text/javascript" src="~/Content/assetss/js/plugins/notifications/bootbox.min.js"></script>
+    <script type="text/javascript" src="~/Content/assetss/js/plugins/notifications/sweet_alert.min.js"></script>
+
+    <script type="text/javascript" src="~/Content/assetss/js/plugins/forms/selects/select2.min.js"></script>
+
+    <script type="text/javascript" src="~/Content/assetss/js/core/app.js"></script>
+    @*<script type="text/javascript" src="~/Content/assetss/js/pages/dashboard.js"></script>*@
+
+    <!-- Basic Datatables -->
+    <script type="text/javascript" src="~/Content/assetss/js/pages/datatables_basic.js"></script>
+
+    <script type="text/javascript" src="~/Content/assetss/js/pages/components_modals.js"></script>
+
+
+    <script type="text/javascript" src="~/Content/assetss/js/plugins/ui/ripple.min.js"></script>
+    <!-- /theme JS files -->
+
+</head>
+
+<body>
+
+    <!-- Main navbar -->
+    <div class="navbar navbar-inverse bg-indigo">
+        <div class="navbar-header">
+            <h3 style="margin-left:15px; "><a style="color:white" href="@Url.Action("DashBoard","Admin")">Golden Numbers Exchange</a></h3>
+
+            <ul class="nav navbar-nav visible-xs-block">
+                <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+                <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-collapse collapse" id="navbar-mobile">
+          
+
+            
+        </div>
+    </div>
+    <!-- /main navbar -->
+    <!-- Page container -->
+    <div class="page-container">
+
+        <!-- Page content -->
+        <div class="page-content">
+
+            <!-- Main sidebar -->
+            <div class="sidebar sidebar-main sidebar-default">
+                <div class="sidebar-content">
+
+                    <!-- User menu -->
+                    <div class="sidebar-user-material">
+                        <div class="category-content">
+                            <div class="sidebar-user-material-content">
+                        
+                                <a href="#"><img src="~/Content/admin_pic.jpg" class="img-circle img-responsive" alt=""></a>
+                                <h6>@name</h6>
+                                <span class="text-size-small"></span>
+                            </div>
+
+                            <div class="sidebar-user-material-menu">
+                                <a href="#user-nav" data-toggle="collapse"><span>My account</span> <i class="caret"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="navigation-wrapper collapse" id="user-nav">
+                            <ul class="navigation">
+                                <li><a href="@Url.Action("EditProfile", "Admin", new { id = Id })"><i class="icon-user-plus"></i> <span>My profile</span></a></li>
+                               
+                                <li><a href="@Url.Action("Logout","Admin")"><i class="icon-switch2"></i> <span>Logout</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /user menu -->
+                    <!-- Main navigation -->
+                    <div class="sidebar-category sidebar-category-visible">
+                        <div class="category-content no-padding">
+                            <ul class="navigation navigation-main navigation-accordion">
+
+                                <!-- Main -->
+                                <li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i></li>
+                                <li class=""><a href="@Url.Action("DashBoard","Admin")"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
+                                <li>
+                                    <a href="#"><i class="icon-stack2 "></i> <span>Numbers</span></a>
+                                    <ul>
+                                        <li><a href="@Url.Action("AddNumber","Admin")">Add Number</a></li>
+                                        <li><a href="@Url.Action("ListNumbers","Admin")"> Numbers List</a></li>
+
+                                    </ul>
+                                </li>
+
+                                <li class=""><a href="@Url.Action("DesiredNumbersList","Admin")"><i class="icon-list"></i> <span>Buyer's List</span></a></li>
+                                <li class=""><a href="@Url.Action("SaleNumbersList","Admin")"><i class="icon-list"></i> <span>Seller's List</span></a></li>
+                                <li class=""><a href="@Url.Action("SubscribersList","Admin")"><i class="icon-list"></i> <span>Subscriber's List</span></a></li>
+
+
+
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /main navigation -->
+
+                </div>
+            </div>
+            <!-- /main sidebar -->
+            <!-- Main content -->
+            <div class="content-wrapper">
+                @RenderBody()
+
+            </div>
+            <!-- /main content -->
+        </div>
+        <!-- /page content -->
+
+    </div>
+    <!-- /page container -->
+
+</body>
+</html>

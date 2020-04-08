@@ -1,0 +1,114 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Golden Numbers Exchange</title>
+
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <link href="~/Content/assetss/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/assetss/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/assetss/css/core.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/assetss/css/components.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/assetss/css/colors.css" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+    <!-- Core JS files -->
+    <script type="text/javascript" src="~/Content/assetss/js/plugins/loaders/pace.min.js"></script>
+    <script type="text/javascript" src="~/Content/assetss/js/core/libraries/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Content/assetss/js/core/libraries/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Content/assetss/js/plugins/loaders/blockui.min.js"></script>
+    <!-- /core JS files -->
+    <!-- Theme JS files -->
+    <script type="text/javascript" src="~/Content/assetss/js/core/app.js"></script>
+
+    <script type="text/javascript" src="~/Content/assetss/js/plugins/ui/ripple.min.js"></script>
+    <!-- /theme JS files -->
+
+</head>
+
+<body class="login-container">
+
+    <!-- Main navbar -->
+    <div class="navbar navbar-inverse bg-indigo">
+        <div class="navbar-header">
+            <h3 style="margin-left:15px; ">Golden Numbers Exchange</h3>
+
+            <ul class="nav navbar-nav pull-right visible-xs-block">
+                <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+            </ul>
+        </div>
+
+
+    </div>
+    <!-- /main navbar -->
+    <!-- Page container -->
+    <div class="page-container">
+
+        <!-- Page content -->
+        <div class="page-content">
+
+            <!-- Main content -->
+            <div class="content-wrapper">
+
+                <!-- Content area -->
+                <div class="content">
+
+                    <!-- Simple login form -->
+                    <center style="color:red">@ViewBag.err</center>
+                    <form action="@Url.Action("PostLogin","Admin")">
+                        <div class="panel panel-body login-form">
+                            <div class="text-center">
+                                <div class="icon-object border-slate-300 text-slate-300"><i class="icon-reading"></i></div>
+                                <h5 class="content-group">Login to your account <small class="display-block">Enter your credentials below</small></h5>
+                            </div>
+
+                            <div class="form-group has-feedback has-feedback-left">
+                                <input type="text" name="Email" class="form-control" placeholder="Email">
+                                <div class="form-control-feedback">
+                                    <i class="icon-user text-muted"></i>
+                                </div>
+                            </div>
+
+                            <div class="form-group has-feedback has-feedback-left">
+                                <input type="password" name="Password" class="form-control" placeholder="Password">
+                                <div class="form-control-feedback">
+                                    <i class="icon-lock2 text-muted"></i>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn bg-blue-400 btn-block">Sign in <i class="icon-circle-right2 position-right"></i></button>
+                            </div>
+
+                            <div class="text-center">
+                                <a href="@Url.Action("Index","Home")">Back To Home</a>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- /simple login form -->
+                    <!-- Footer -->
+                    <div class="footer text-muted text-center">
+                        &copy; 2019. <a href="www.goldennumbersexchange.com">Golden Numbers Exchange</a> Powered by <a href="http://www.nodlays.com" target="_blank">Nodlays</a>
+                    </div>
+                    <!-- /footer -->
+
+                </div>
+                <!-- /content area -->
+
+            </div>
+            <!-- /main content -->
+
+        </div>
+        <!-- /page content -->
+
+    </div>
+    <!-- /page container -->
+
+</body>
+</html>

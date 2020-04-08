@@ -1,0 +1,76 @@
+﻿  <!-- == Color schemes == -->
+
+ 
+
+<!-- == /Color schemes == -->
+
+<section class="section-padding">
+    <div class="container">
+        <div class="section-title">
+            <h2>Contact <span>Us</span></h2>
+            <span class="s-title-icon"><i class="icofont icofont-diamond"></i></span>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="contact-info text-center">
+                    <span><i class="fa fa-map-marker"></i></span>
+                    <h4>Our Address</h4>
+                    <h6>Shop # 97 LGF, Al-Hafeez Shopping Mall, Gulberg III, Lahore, Pakistan</h6>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="contact-info text-center">
+                    <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                    <h4>Call Us</h4>
+                    <h6>
+                        +92-320-0000058
+                    </h6>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="contact-info text-center">
+                    <span><i class="fa fa-map-marker"></i></span>
+                    <h4>Email Us</h4>
+                    <h6>info@goldennumbersexchange.com</h6>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="contact-info text-center">
+                    <span><i class="fa fa-globe" aria-hidden="true"></i></span>
+                    <h4>Our Website</h4>
+                    <h6>www.goldennumbersexchange.com</h6>
+                </div>
+            </div>
+        </div>
+        <div class="row padding-60">
+            <div class="col-md-7 contact-team">
+                <h3 class="text-center">Contact <span>Our Team</span></h3>
+                <center style="color:red">@ViewBag.message</center>
+                <div class="contact-send-message">
+                    <form class="contact-form row" action="@Url.Action("PostContact","Home") " method="post">
+                        <div class="col col-sm-6">
+                            <input type="text" name="Name" required class="form-control" placeholder="Enter Name">
+                        </div>
+                        <div class="col col-sm-6">
+                            <input type="email" name="Email" required class="form-control" placeholder="Enter E-mail">
+                        </div>
+                        <div class="col col-sm-6">
+                            <input type="text" name="Subject" required class="form-control" placeholder="Enter Subject">
+                        </div>
+                        <div class="col col-sm-6">
+                            <input type="text" name="Phone"  class="form-control" placeholder="Enter Phone">
+                        </div>
+                        <div class="col col-sm-12">
+                            <textarea name="Message" required class="form-control" placeholder="Enter Your Message"></textarea>
+                        </div>
+                        <div class="col col-sm-12 text-center">
+                            <button type="submit" class="btn btn-default btn-style hvr-shutter-out-vertical">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-5">
+                 </div>
+        </div>
+    </div>
+</section>

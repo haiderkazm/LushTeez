@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "EditProfile";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="page-header page-header-default">
+    <div class="page-header-content">
+        <div class="page-title">
+            <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Golden</span> Number</h4>
+        </div>
+
+
+    </div>
+
+    <div class="breadcrumb-line">
+        <ul class="breadcrumb">
+            <li><a href="@Url.Action("Index","Admin")"><i class="icon-home2 position-left"></i> Home</a></li>
+            <li><a href="">Numbers</a></li>
+            <li class="active">Edit Number</li>
+        </ul>
+
+
+    </div>
+</div>
+<div class="content">
+
+    <!-- Form horizontal -->
+    <div class="panel panel-flat">
+        <div class="panel-heading">
+            <h2 class="panel-title">Update Profile</h2>
+           
+        </div>
+
+        <div class="panel-body">
+           <center style="color:red">@ViewBag.message</center>
+            <form class="form-horizontal" action="@Url.Action("PostEditProfile","Admin") " method="post">
+                <fieldset class="content-group">
+                
+
+
+                    <input type="hidden" class="form-control" required value="@ViewBag.profile.Id" name="id" placeholder="">
+                    <div class="form-group">
+                        <label class="control-label col-lg-offset-1 col-lg-2">Name</label>
+                        <div class="col-lg-8">
+                            <input type="text" name="Name" class="form-control" value="@ViewBag.profile.Name" placeholder="Enter Name">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-offset-1 col-lg-2">Email</label>
+                        <div class="col-lg-8">
+                            <input type="email" name="Email" class="form-control" value="@ViewBag.profile.Email" placeholder="Enter Email">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-offset-1 col-lg-2">Phone</label>
+                        <div class="col-lg-8">
+                            <input type="text" name="Phone" class="form-control" value="@ViewBag.profile.Phone" placeholder="Enter Phone">
+                        </div>
+                    </div>
+
+                    
+
+
+                    <div class="form-group">
+                        <label class="control-label col-lg-offset-1 col-lg-2">Password</label>
+                        <div class="col-lg-8">
+                            <input type="password" name="Password" class="form-control" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-lg-offset-1 col-lg-2">Confirm Password</label>
+                        <div class="col-lg-8">
+                            <input type="password" name="ConfirmPassword" class="form-control" placeholder="Confirm Password">
+                        </div>
+                    </div>
+
+
+                </fieldset>
+
+
+
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary">Update <i class="icon-arrow-right14 position-right"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- /form horizontal -->
+    <!-- Footer -->
+    <div class="footer text-muted">
+        &copy; 2019.Powered by <a href="http://nodlays.com" target="_blank">Nodlays</a>
+    </div>
+    <!-- /footer -->
+
+</div>
+
+

@@ -1,0 +1,1263 @@
+﻿@using GoldenNumbers.Models
+@{
+    ViewBag.Title = "BuyNumber";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+
+.overflow{
+    height:400px;
+    overflow:auto;
+}
+       /* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #055DB6; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #055DB2; 
+}
+#btn_desir{
+    height:62px;
+    width: 248px;
+    padding-top: 16px;
+    font-size: x-large;
+}
+</style>
+<!-- ==== Portfolio section start ==== -->
+<section class="section-padding gray-brackground" id="portfolio">
+    <div class="container">
+        <div class="section-title">
+            <h2>All <span>Numbers</span></h2>
+            <span class="s-title-icon"><i class="icofont icofont-diamond"></i></span>
+        </div>
+        <div class="portfolio-content">
+            <!-- Protfolio navbar -->
+            <div class="portfolio-filter-wrap text-center">
+                <ul class="portfolio-filter ">
+                    <li id="sel1" class=" active"><a href="#" data-filter=".cat1">Mobilink </a></li>
+                    <li onclick="funrow2()" id="sel2"><a href="#" data-filter=".cat2">Telenor</a></li>
+                    <li id="sel3"><a href="#" data-filter=".cat3">Ufone</a></li>
+                    <li id="sel4"><a href="#" data-filter=".cat4">Warid</a></li>
+                    <li id="sel5"><a href="#" data-filter=".cat5">Zong</a></li>
+                </ul>
+            </div>
+
+            <!-- Single portfolio item -->
+            <div class="row">
+                <div class="portfolio-item cat1 row1 col-md-3 col-sm-6 col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">Regular</h6>
+                        </div>
+                        <div class="pricing-body   overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.JazzR)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat1 row1 col-md-3 col-sm-6 col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">Triple</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.JazzT)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat1 row1 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center active-pricing">
+                        <div class="pricing-heading">
+                            <h6 class="title">Tetra</h6>
+                        </div>
+                        <div class="pricing-body   overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.JazzTet)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat1 row1  col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">Penta</h6>
+                        </div>
+                        <div class="pricing-body   overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.JazzP)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div style="overflow: hidden !important;" class="portfolio-item cat2 w3-animate-zoom row2 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">Regular</h6>
+                        </div>
+                        <div class="pricing-body   overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.TelenorR)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat2 w3-animate-zoom row2 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">Triple</h6>
+                        </div>
+                        <div class="pricing-body   overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.TelenorT)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat2 w3-animate-zoom row2 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center active-pricing">
+                        <div class="pricing-heading">
+                            <h6 class="title">Tetra</h6>
+                        </div>
+                        <div class="pricing-body   overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.TelenorTet)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat2 row2 col-md-3 col-sm-6  col-xs-12 ">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">Penta</h6>
+                        </div>
+                        <div class="pricing-body   overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.TelenorP)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+                            s
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item cat3 row3 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">Regular</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.UfoneR)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat3 row3 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">Triple</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.UfoneT)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat3 row3 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center active-pricing">
+                        <div class="pricing-heading">
+                            <h6 class="title">Tetra</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.UfoneTet)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat3 row3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">Penta</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.UfoneP)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="portfolio-item cat4 row4 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">Regular</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.WaridR)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat4 row4 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">Triple</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.WaridT)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat4 row4 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center active-pricing">
+                        <div class="pricing-heading">
+                            <h6 class="title">Tetra</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.WaridTet)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat4 row4 col-md-3 col-sm-6 col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">Penta</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.WaridP)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="portfolio-item cat5 row5 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">Regular</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.ZongR)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat5 row5 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">Triple</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.ZongT)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat5 row5 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center active-pricing">
+                        <div class="pricing-heading">
+                            <h6 class="title">Tetra</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.ZongTet)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat5 row5 col-md-3 col-sm-6 col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">Penta</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.ZongP)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="portfolio-item cat1 row1 col-md-3 col-sm-6 col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">Hexa</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.JazzH)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat1 row1 col-md-3 col-sm-6 col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">786</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.Jazz7)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat1 row1 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center active-pricing">
+                        <div class="pricing-heading">
+                            <h6 class="title">Triple Pair</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.JazzTrP)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat1 row1  col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">UAN</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.JazzUAN)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div style="overflow: hidden !important;" class="portfolio-item cat2 w3-animate-zoom row2 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">Hexa</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.TelenorH)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat2 w3-animate-zoom row2 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">786</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.Telenor7)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat2 w3-animate-zoom row2 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center active-pricing">
+                        <div class="pricing-heading">
+                            <h6 class="title">Triple Pair</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.TelenorTrp)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat2 row2 col-md-3 col-sm-6  col-xs-12 ">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">UAN</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.TelenorUAN)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item cat3 row3 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">Hexa</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.UfoneH)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat3 row3 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">786</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.Ufone7)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat3 row3 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center active-pricing">
+                        <div class="pricing-heading">
+                            <h6 class="title">Triple Pair</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.UfoneTrP)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat3 row3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">UAN</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.UfoneUAN)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="portfolio-item cat4 row4 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">Hexa</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.WaridH)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat4 row4 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">786</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.Warid7)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat4 row4 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center active-pricing">
+                        <div class="pricing-heading">
+                            <h6 class="title">Triple Pairs</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.WaridTrP)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat4 row4 col-md-3 col-sm-6 col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">UAN</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.WaridUAN)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="portfolio-item cat5 row5 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">Hexa</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.ZongH)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat5 row5 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">786</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.Zong7)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat5 row5 col-md-3 col-sm-6  col-xs-12">
+                    <div class="pricing-item text-center active-pricing">
+                        <div class="pricing-heading">
+                            <h6 class="title">Triple Pair</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.ZongTrP)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item cat5 row5 col-md-3 col-sm-6 col-xs-12">
+                    <div class="pricing-item text-center">
+                        <div class="pricing-heading">
+                            <h6 class="title">UAN</h6>
+                        </div>
+                        <div class="pricing-body  overflow">
+
+                            <ul class="pricing-list">
+                                @foreach (Number num in ViewBag.ZongUAN)
+                                {
+                                    <li><h4><b> @num.Number1</b></h4></li>
+                                    if (@num.Price == "")
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: On Call</h5></li>
+                                        <hr />
+
+                                    }
+                                    else
+                                    {
+                                        <li><h5 style="color:#3F51B5">Price: @num.Price</h5></li>
+                                        <hr />
+                                    }
+                                }
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="text-center ">
+                <a id="btn_desir" class="btn btn-default btn-style hvr-shutter-out-vertical" href="@Url.Action("DesiredNumber","Home")">Desired Number</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ==== Protfolio section end ==== -->
+<!-- ==== footer section start ==== -->
+<br />
+<!-- ==== footer section start ==== -->
+@*<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>*@
+<script src="~/Content/Assets/js/jquery.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".row2").hide();
+        $(".row3").hide();
+        $(".row4").hide();
+        $(".row5").hide();
+
+        $("#sel5").click(function () {
+            $(".row4").hide();
+            $(".row3").hide();
+            $(".row2").hide();
+            $(".row1").hide();
+            $(".row5").fadeIn('slow');
+        });
+
+
+        $("#sel4").click(function () {
+            $(".row5").hide();
+            $(".row3").hide();
+            $(".row2").hide();
+            $(".row1").hide();
+            $(".row4").fadeIn('slow');
+        });
+
+        $("#sel3").click(function () {
+            $(".row5").hide();
+            $(".row4").hide();
+            $(".row2").hide();
+            $(".row1").hide();
+            $(".row3").fadeIn('slow');
+        });
+        $("#sel2").click(function () {
+            $(".row5").hide();
+            $(".row4").hide();
+            $(".row3").hide();
+            $(".row1").hide();
+            $(".row2").fadeIn('slow');
+        });
+        $("#sel1").click(function () {
+            $(".row5").hide();
+            $(".row4").hide();
+            $(".row3").hide();
+            $(".row2").hide();
+            $(".row1").fadeIn('slow');
+        });
+    });
+
+</script>
